@@ -3,8 +3,10 @@
 		date: string;
 		title: string;
 		description: string;
-		image?: string;
-		imageDescription?: string;
+		photos?: {
+			caption: string;
+			image?: string;
+		}[];
 	}
 
 	const timelineEvents: TimelineEvent[] = [
@@ -12,13 +14,21 @@
 			date: "Spring 2018",
 			title: "First Meeting",
 			description: "We first met at a mutual friend's party in college. Gabriel was immediately drawn to Elyse's infectious laugh, while Elyse was charmed by Gabriel's witty sense of humor.",
-			imageDescription: "A candid photo from the college party where we first met"
+			photos: [
+				{ caption: "College Party" },
+				{ caption: "With Friends" },
+				{ caption: "First Introduction" }
+			]
 		},
 		{
 			date: "Summer 2018",
 			title: "First Date",
 			description: "Our first official date was a picnic in the park followed by a walk along the river. We talked for hours about our dreams, aspirations, and favorite movies.",
-			imageDescription: "Our picnic setup in the park - still have this blanket!"
+			photos: [
+				{ caption: "Picnic Setup" },
+				{ caption: "River Walk" },
+				{ caption: "Perfect Sunset" }
+			]
 		},
 		{
 			date: "Fall 2018",
@@ -29,31 +39,57 @@
 			date: "Summer 2019",
 			title: "First Trip Together",
 			description: "Our first vacation together was a road trip to the mountains. We discovered our shared love for hiking, stargazing, and trying new foods.",
-			imageDescription: "Summit photo from our first hiking adventure together"
+			photos: [
+				{ caption: "Mountain Summit" },
+				{ caption: "Under the Stars" },
+				{ caption: "Local Flavors" },
+				{ caption: "Our Overlook" }
+			]
 		},
 		{
 			date: "Spring 2020",
 			title: "Moving In Together",
 			description: "Despite the challenges of the pandemic, we decided to move in together. It was the best decision we ever made, and we grew even closer during this time.",
-			imageDescription: "Surrounded by moving boxes in our first apartment"
+			photos: [
+				{ caption: "Moving Day" },
+				{ caption: "Building Together" },
+				{ caption: "First Meal" },
+				{ caption: "Making it Home" }
+			]
 		},
 		{
 			date: "Fall 2021",
 			title: "Adopting Luna",
 			description: "We welcomed our furry daughter Luna into our lives. This sweet rescue dog completed our little family and brought us so much joy.",
-			imageDescription: "Luna's first day home - she immediately claimed the couch"
+			photos: [
+				{ caption: "Luna's First Day" },
+				{ caption: "First Walk" },
+				{ caption: "Learning Tricks" },
+				{ caption: "Family of Three" }
+			]
 		},
 		{
 			date: "Summer 2023",
 			title: "Cross-Country Adventure",
 			description: "We embarked on an epic cross-country road trip, visiting national parks and creating memories that will last a lifetime.",
-			imageDescription: "Our road trip map with all the national parks we visited"
+			photos: [
+				{ caption: "The Adventure Map" },
+				{ caption: "Grand Canyon Sunrise" },
+				{ caption: "Yellowstone Trails" },
+				{ caption: "Pacific Coast" },
+				{ caption: "Utah Stars" }
+			]
 		},
 		{
 			date: "December 2024",
 			title: "The Proposal",
 			description: "Gabriel proposed during a winter hike to our favorite overlook. With the snow falling gently around us, he got down on one knee and asked Elyse to be his forever.",
-			imageDescription: "The moment right after 'Yes!' - tears of joy in the snow"
+			photos: [
+				{ caption: "She Said Yes!" },
+				{ caption: "The Proposal" },
+				{ caption: "The Ring" },
+				{ caption: "Celebration" }
+			]
 		},
 		{
 			date: "August 2026",
@@ -61,6 +97,51 @@
 			description: "The day we've been dreaming of - celebrating our love with all our favorite people in the beautiful mountains of North Carolina."
 		}
 	];
+
+	// Slideshow state for each timeline event
+	let slideshowStates = $state(timelineEvents.map(() => ({ currentIndex: 0 })));
+
+	function nextSlide(eventIndex: number, photoCount: number) {
+		slideshowStates[eventIndex].currentIndex = (slideshowStates[eventIndex].currentIndex + 1) % photoCount;
+	}
+
+	function prevSlide(eventIndex: number, photoCount: number) {
+		slideshowStates[eventIndex].currentIndex = slideshowStates[eventIndex].currentIndex === 0 
+			? photoCount - 1 
+			: slideshowStates[eventIndex].currentIndex - 1;
+	}
+
+	function goToSlide(eventIndex: number, slideIndex: number) {
+		slideshowStates[eventIndex].currentIndex = slideIndex;
+	}
+
+	// Touch/swipe handling
+	let touchStartX = 0;
+	let touchEndX = 0;
+
+	function handleTouchStart(e: TouchEvent) {
+		touchStartX = e.changedTouches[0].screenX;
+	}
+
+	function handleTouchEnd(e: TouchEvent, eventIndex: number, photoCount: number) {
+		touchEndX = e.changedTouches[0].screenX;
+		handleSwipe(eventIndex, photoCount);
+	}
+
+	function handleSwipe(eventIndex: number, photoCount: number) {
+		const swipeThreshold = 50;
+		const swipeDistance = touchStartX - touchEndX;
+		
+		if (Math.abs(swipeDistance) > swipeThreshold) {
+			if (swipeDistance > 0) {
+				// Swipe left - next slide
+				nextSlide(eventIndex, photoCount);
+			} else {
+				// Swipe right - previous slide
+				prevSlide(eventIndex, photoCount);
+			}
+		}
+	}
 </script>
 
 <svelte:head>
@@ -95,15 +176,58 @@
 					<!-- Content -->
 					<div class="ml-16 md:ml-0 md:w-1/2 {index % 2 === 0 ? 'md:pr-12' : 'md:pl-12 md:ml-auto'}">
 						<div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-							<!-- Photo placeholder if image description exists -->
-							{#if event.imageDescription}
-								<div class="aspect-video bg-gray-100 flex items-center justify-center border-b border-gray-100">
-									<div class="text-center p-6">
-										<svg class="w-8 h-8 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-										</svg>
-										<p class="text-xs text-gray-500 text-center">{event.imageDescription}</p>
+							<!-- Photo slideshow if photos exist -->
+							{#if event.photos && event.photos.length > 0}
+								<div class="relative aspect-video bg-gray-100 border-b border-gray-100">
+									<!-- Slideshow container -->
+									<div 
+										class="relative w-full h-full overflow-hidden"
+										ontouchstart={handleTouchStart}
+										ontouchend={(e) => handleTouchEnd(e, index, event.photos?.length || 0)}
+									>
+										<!-- Photo slides -->
+										{#each event.photos as photo, photoIndex}
+											<div class="absolute inset-0 transition-transform duration-300 ease-in-out flex items-center justify-center p-6 {photoIndex === slideshowStates[index].currentIndex ? 'translate-x-0' : photoIndex < slideshowStates[index].currentIndex ? '-translate-x-full' : 'translate-x-full'}">
+												<div class="text-center">
+													<svg class="w-8 h-8 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+													</svg>
+												</div>
+											</div>
+										{/each}
 									</div>
+
+									<!-- Navigation arrows (only show if more than 1 photo) -->
+									{#if event.photos.length > 1}
+										<button 
+											class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-400 bg-opacity-70 hover:bg-opacity-90 text-white p-1 rounded-full transition-all duration-200 cursor-pointer"
+											onclick={() => prevSlide(index, event.photos?.length || 0)}
+											aria-label="Previous photo"
+										>
+											<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+											</svg>
+										</button>
+										<button 
+											class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-400 bg-opacity-70 hover:bg-opacity-90 text-white p-1 rounded-full transition-all duration-200 cursor-pointer"
+											onclick={() => nextSlide(index, event.photos?.length || 0)}
+											aria-label="Next photo"
+										>
+											<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+											</svg>
+										</button>
+
+										<!-- Photo caption -->
+										<div class="absolute top-2 left-2 bg-gray-400 bg-opacity-80 text-white text-xs px-2 py-1 rounded">
+											{event.photos[slideshowStates[index].currentIndex].caption}
+										</div>
+
+										<!-- Photo counter -->
+										<div class="absolute top-2 right-2 bg-gray-400 bg-opacity-80 text-white text-xs px-2 py-1 rounded">
+											{slideshowStates[index].currentIndex + 1} / {event.photos.length}
+										</div>
+									{/if}
 								</div>
 							{/if}
 							<div class="p-6">

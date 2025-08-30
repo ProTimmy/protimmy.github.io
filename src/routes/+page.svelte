@@ -24,13 +24,10 @@
 		
 		<!-- Video Placeholder -->
 		<div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
-			<div class="aspect-video bg-gray-100 flex items-center justify-center">
-				<div class="text-center">
-					<video controls>
-						<source src="/video/Patagonia.mp4" type="video/mp4">
-						<track kind="captions">
-					</video>
-				</div>
+			<div class="text-center">
+				<iframe title="Our Engagement" allowfullscreen class="aspect-video bg-gray-100 flex items-center justify-center"
+					src="https://www.youtube.com/embed/hjI9I55pK-A?si=wTrJyOQUUqa61UEs">
+				</iframe>
 			</div>
 		</div>
 	</div>
