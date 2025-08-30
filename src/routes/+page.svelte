@@ -26,11 +26,10 @@
 		<div class="relative bg-white rounded-lg shadow-sm overflow-hidden">
 			<div class="aspect-video bg-gray-100 flex items-center justify-center">
 				<div class="text-center">
-					<svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a2.5 2.5 0 110 5H9m4.5-1.206a25.963 25.963 0 014.896 5.283c.87 1.552.87 3.47 0 5.022-1.739 3.108-6.569 3.108-8.308 0a25.963 25.963 0 014.896-5.283"></path>
-					</svg>
-					<p class="text-gray-500">Engagement Video</p>
-					<p class="text-sm text-gray-400 mt-2">Coming Soon</p>
+					<video controls>
+						<source src="/video/Patagonia.mp4" type="video/mp4">
+						<track kind="captions">
+					</video>
 				</div>
 			</div>
 		</div>
@@ -86,20 +85,6 @@
 				<p class="text-gray-500 text-sm">encouraged</p>
 			</div>
 		</div>
-	</div>
-</section>
-
-<!-- RSVP Section -->
-<section class="bg-gray-50 py-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h2 class="text-3xl sm:text-4xl font-light text-black mb-4">Join Our Celebration</h2>
-		<p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-			We can't wait to celebrate this special day with our family and friends. 
-			Please RSVP by June 1, 2026.
-		</p>
-		<button class="inline-flex items-center px-8 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200 font-light tracking-wide">
-			RSVP Now
-		</button>
 	</div>
 </section>
 
