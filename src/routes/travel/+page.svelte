@@ -54,7 +54,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-white py-20">
+<section class="bg-white pb-20">
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
 			Travel

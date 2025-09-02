@@ -84,7 +84,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-white py-20">
+<section class="bg-white pb-20">
 	<div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 		<h1 class="mb-6 text-4xl font-light tracking-wider text-black sm:text-5xl lg:text-6xl">
 			Registry

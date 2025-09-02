@@ -3,7 +3,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative bg-white py-20">
+<section class="relative bg-white pb-20">
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 		<h2 class="text-3xl sm:text-4xl font-light text-black mb-4">Welcome to Our Wedding</h2>
 		<div class="w-24 h-px bg-black mx-auto mb-8"></div>

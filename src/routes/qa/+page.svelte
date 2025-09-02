@@ -88,7 +88,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-white py-20">
+<section class="bg-white pb-20">
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
 			Q + A
@@ -108,7 +108,7 @@
 				<div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
 					<button
 						onclick={() => toggleFAQ(index)}
-						class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+						class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
 					>
 						<h3 class="text-lg font-light text-black pr-4">{faq.question}</h3>
 						<svg 
