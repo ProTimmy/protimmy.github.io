@@ -82,13 +82,11 @@
 	<div class="bg-white">
 		<!-- Desktop Navigation -->
 		<nav
-			class="sticky top-0 right-0 left-0 z-50 transition-all duration-500 ease-out hidden md:block"
+			class="sticky pt-4 pb-10 top-0 right-0 left-0 z-50 transition-all duration-500 ease-out hidden md:block"
 			style="
 				background-color: rgba(255, 255, 255, {(scrollProgress / scrollProgress) * 0.95});
 				backdrop-filter: blur({scrollProgress * 4}px);
 				box-shadow: 0 1px 3px rgba(0, 0, 0, {scrollProgress * 0.1});
-				padding-top: {6 - scrollProgress * 6}rem;
-				padding-bottom: {6 - scrollProgress * 6}rem;
 			"
 		>
 			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -101,7 +99,7 @@
 							style="
 								font-family: 'Dancing Script', cursive; 
 								font-weight: 600;
-								font-size: {4.5 - scrollProgress * 1.5}rem;
+								font-size: 4rem;
 								transform: translate({scrollProgress * -40}%, {scrollProgress * 30}%);
 							"
 						>
@@ -118,7 +116,6 @@
 							max-height: {(1 - scrollProgress) * 200}px;
 							opacity: {1 - scrollProgress * 1.5};
 							transform: translateY({scrollProgress * -30}px) scaleY({1 - scrollProgress * 0.3});
-							margin-bottom: {(1 - scrollProgress) * 2}rem;
 						"
 					>
 						<p
@@ -131,7 +128,7 @@
 						</p>
 						{#if showCountdown}
 							<p
-								class="text-base text-gray-500 transition-all duration-500 ease-out"
+								class="text-base mb-6 text-gray-500 transition-all duration-500 ease-out"
 								style="
 									transform: translateY({scrollProgress * -15}px);
 								"
@@ -142,26 +139,24 @@
 					</div>
 
 					<!-- Navigation Links - Slide from center to right -->
-					<div>
-						<div
-							class="flex justify-center space-x-8 transition-all duration-500 ease-out"
-							style="
-								transform: translate({scrollProgress * 30}%, {scrollProgress * -175}%);
-							"
+					<div
+						class="flex justify-center space-x-8 transition-all duration-500 ease-out"
+						style="
+							transform: translate({scrollProgress * 30}%, {scrollProgress * -175}%);
+						"
 
-						>
-							{#each navItems as item}
-								<a
-									href={item.href}
-									class="font-light tracking-wide text-black transition-colors duration-200 hover:text-gray-600 {$page
-										.url.pathname === item.href
-										? 'border-b border-black'
-										: ''}"
-								>
-									{item.name}
-								</a>
-							{/each}
-						</div>
+					>
+						{#each navItems as item}
+							<a
+								href={item.href}
+								class="font-light tracking-wide text-black transition-colors duration-200 hover:text-gray-600 {$page
+									.url.pathname === item.href
+									? 'border-b border-black'
+									: ''}"
+							>
+								{item.name}
+							</a>
+						{/each}
 					</div>
 				</div>
 			</div>
