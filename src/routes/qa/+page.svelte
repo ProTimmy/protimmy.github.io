@@ -1,4 +1,10 @@
 <script lang="ts">
+	import cpf from '$lib/assets/faq/cpf.jpg';
+	import outfits_mens1 from '$lib/assets/faq/outfits-mens-1.jpeg';
+	import outfits_mens2 from '$lib/assets/faq/outfits-mens-2.jpeg';
+	import outfits_womens1 from '$lib/assets/faq/outfits-womens-1.jpeg';
+	import outfits_womens2 from '$lib/assets/faq/outfits-womens-2.jpeg';
+
 	interface FAQ {
 		question: string;
 		answer: string;
@@ -11,18 +17,13 @@
 			question: "Where is the wedding taking place?",
 			answer: "We're getting married in the beautiful mountains of Cashiers, North Carolina. The venue is Chimney Pond Farms, a pine tree farm located in the heart of the Blue Ridge Mountains. For more information, please visit <a href='https://chimneypondfarm.com/'>their website</a>.",
 			isOpen: false,
-			photos: ['./src/lib/assets/faq/cpf.jpg'],
+			photos: [cpf],
 		},
 		{
 			question: "What should I wear?",
 			answer: "Wear whatever makes you most comfortable!\n\n Our wedding ceremony will be in a grassy area, so we recommend flat shoes or wide heels. The weather may be warm, so lightweight fabrics may be more comfortable. Here are a couple of sample outfits that would look great with our wedding colors.", 
 			isOpen: false,
-			photos: [
-				'./src/lib/assets/faq/outfits-mens-1.jpeg',
-				'./src/lib/assets/faq/outfits-mens-2.jpeg',
-				'./src/lib/assets/faq/outfits-womens-1.jpeg',
-				'./src/lib/assets/faq/outfits-womens-2.jpeg',
-			],
+			photos: [outfits_mens1, outfits_mens2, outfits_womens1, outfits_womens2],
 		},
 		{
 			question: "Will the ceremony be indoors or outdoors?",
