@@ -1,5 +1,9 @@
+<script lang="ts">
+	import cpf from '$lib/assets/home/cpf.png';
+</script>
+
 <svelte:head>
-	<title>Gabriel & Elyse Timotei - Wedding</title>
+	<title>Timotei Wedding</title>
 </svelte:head>
 
 <!-- Hero Section -->
@@ -19,7 +23,7 @@
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-12">
 			<h2 class="text-3xl sm:text-4xl font-light text-black mb-4">Our Engagement</h2>
-			<p class="text-lg text-gray-600">Relive the moment that started our journey to forever</p>
+			<p class="text-lg text-gray-600">After 6 years, 5 addresses, and 4 states together, Gabe proposed to Elyse in January during a trip to Chile and Patagonia.</p>
 		</div>
 		
 		<!-- Video Placeholder -->
@@ -51,7 +55,7 @@
 				</div>
 				<h3 class="text-xl font-light text-black mb-2">When</h3>
 				<p class="text-gray-600 mb-1">Friday, August 1, 2026</p>
-				<p class="text-gray-500 text-sm">Ceremony at 5:00 PM</p>
+				<p class="text-gray-500 text-sm">Arrive at 4:00 PM - Ceremony at 4:30 PM</p>
 				<p class="text-gray-500 text-sm">Reception to follow</p>
 			</div>
 
@@ -64,9 +68,9 @@
 					</svg>
 				</div>
 				<h3 class="text-xl font-light text-black mb-2">Where</h3>
-				<p class="text-gray-600 mb-1">Cashiers, North Carolina</p>
-				<p class="text-gray-500 text-sm">Detailed venue information</p>
-				<p class="text-gray-500 text-sm">coming soon</p>
+				<p class="text-gray-600 mb-1">Glenville, North Carolina</p>
+				<p class="text-gray-500 text-sm">Chimney Pond Farm</p>
+				<p class="text-gray-500 text-sm">240 Chimney Pond Rd</p>
 			</div>
 
 			<!-- Dress Code -->
@@ -77,20 +81,14 @@
 					</svg>
 				</div>
 				<h3 class="text-xl font-light text-black mb-2">Attire</h3>
-				<p class="text-gray-600 mb-1">Cocktail Attire</p>
-				<p class="text-gray-500 text-sm">Semi-formal dress</p>
-				<p class="text-gray-500 text-sm">encouraged</p>
+				<p class="text-gray-600 mb-1">Semi-formal</p>
+				<p class="text-gray-500 text-sm">Garden party attire</p>
 			</div>
 		</div>
 	</div>
 </section>
 
 <!-- Love Quote Section -->
-<section class="bg-white py-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<blockquote class="text-2xl sm:text-3xl font-light text-black italic mb-8">
-			"Being deeply loved by someone gives you strength, while loving someone deeply gives you courage."
-		</blockquote>
-		<cite class="text-gray-500">— Lao Tzu</cite>
-	</div>
+<section class="bg-white pb-20">
+	<img src={cpf} alt="" class="w-auto rounded-lg px-50"/>
 </section>

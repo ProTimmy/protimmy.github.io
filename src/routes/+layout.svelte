@@ -18,7 +18,7 @@
 		{ name: 'Q + A', href: '/qa' },
 		{ name: 'Travel', href: '/travel' },
 		{ name: 'Things to Do', href: '/things-to-do' },
-		{ name: 'Registry', href: '/registry' }
+		{ name: 'Registry', href: 'https://withjoy.com/gabriel-and-elyse/registry' }
 	];
 
 	onMount(() => {
@@ -121,7 +121,7 @@
 								transform: translateY({scrollProgress ? -20 : 0}px);
 							"
 						>
-							August 1, 2026 • Cashiers, NC, USA
+							August 1, 2026 • Glenville, NC, USA
 						</p>
 						{#if showCountdown}
 							<p
@@ -256,7 +256,7 @@
 					>
 						Gabriel & Elyse Timotei
 					</h3>
-					<p class="mb-4 text-gray-600">August 1, 2026 • Cashiers, NC, USA</p>
+					<p class="mb-4 text-gray-600">August 1, 2026 • Glenville, NC, USA</p>
 					<p class="text-sm text-gray-500">We can't wait to celebrate with you!</p>
 				</div>
 			</div>
