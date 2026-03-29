@@ -13,6 +13,7 @@
 
 	const navItems = [
 		{ name: 'Home', href: '/' },
+		{ name: 'RSVP', href: 'https://withjoy.com/gabriel-and-elyse/rsvp' },
 		{ name: 'Our Story', href: '/our-story' },
 		{ name: 'Photos', href: '/photos' },
 		{ name: 'Q + A', href: '/qa' },

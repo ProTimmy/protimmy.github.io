@@ -1,94 +1,132 @@
 <script lang="ts">
+	import college_years_1 from '$lib/assets/our-story/college-years-1.jpg';
+	import officially_official_1 from '$lib/assets/our-story/officially-official-1.jpg';
+	import officially_official_2 from '$lib/assets/our-story/officially-official-2.jpeg';
+	import officially_official_3 from '$lib/assets/our-story/officially-official-3.jpeg';
+	import pandemic_1 from '$lib/assets/our-story/pandemic-1.jpg';
+	import pandemic_2 from '$lib/assets/our-story/pandemic-2.jpeg';
+	import pandemic_3 from '$lib/assets/our-story/pandemic-3.jpg';
+	import pandemic_4 from '$lib/assets/our-story/pandemic-4.jpeg';
+	import dc_1 from '$lib/assets/our-story/dc-1.jpeg';
+	import dc_2 from '$lib/assets/our-story/dc-2.jpg';
+	import dc_3 from '$lib/assets/our-story/dc-3.jpeg';
+	import boston_1 from '$lib/assets/our-story/boston-1.jpeg';
+	import boston_2 from '$lib/assets/our-story/boston-2.jpeg';
+	import boston_3 from '$lib/assets/our-story/boston-3.jpg';
+
 	interface TimelineEvent {
 		date: string;
 		title: string;
 		description: string;
 		photos?: {
-			caption: string;
-			image?: string;
+			caption?: string;
+			image: string;
 		}[];
 	}
 
 	const timelineEvents: TimelineEvent[] = [
 		{
-			date: "Spring 2018",
-			title: "First Meeting",
-			description: "We first met at a mutual friend's party in college. Gabriel was immediately drawn to Elyse's infectious laugh, while Elyse was charmed by Gabriel's witty sense of humor.",
-			photos: [
-				{ caption: "College Party" },
-				{ caption: "With Friends" },
-				{ caption: "First Introduction" }
-			]
-		},
-		{
-			date: "Summer 2018",
-			title: "First Date",
-			description: "Our first official date was a picnic in the park followed by a walk along the river. We talked for hours about our dreams, aspirations, and favorite movies.",
-			photos: [
-				{ caption: "Picnic Setup" },
-				{ caption: "River Walk" },
-				{ caption: "Perfect Sunset" }
-			]
-		},
-		{
 			date: "Fall 2018",
-			title: "Becoming Official",
-			description: "After months of getting to know each other, we made it official. Gabriel asked Elyse to be his girlfriend during a beautiful autumn evening walk."
+			title: "And they were roommates...",
+			description: "A bit unconventional, but we first met when we became roommates in college at UNC Chapel Hill. We instantly hit it off as friends, but it would take a while longer for love to blossom.",
+			photos: [
+				{
+					caption: "First photo together",
+					image: college_years_1
+				},
+			]
 		},
 		{
 			date: "Summer 2019",
-			title: "First Trip Together",
-			description: "Our first vacation together was a road trip to the mountains. We discovered our shared love for hiking, stargazing, and trying new foods.",
+			title: "Officially official",
+			description: "It wasn't until after Gabe had graduated that we began dating. We spent most of the summer apart while Gabe was on a road trip and started our new long distance relationship with lots of travel between DC and Chapel Hill.",
 			photos: [
-				{ caption: "Mountain Summit" },
-				{ caption: "Under the Stars" },
-				{ caption: "Local Flavors" },
-				{ caption: "Our Overlook" }
+				{
+					caption: "Date at Dorothea Dix park",
+					image: officially_official_1
+				},
+				{
+					image: officially_official_2
+				},
+				{
+					caption: "Hiking trip in the Rocky Mountains",
+					image: officially_official_3
+				},
 			]
 		},
 		{
-			date: "Spring 2020",
-			title: "Moving In Together",
-			description: "Despite the challenges of the pandemic, we decided to move in together. It was the best decision we ever made, and we grew even closer during this time.",
+			date: "March 2020",
+			title: "And then there was a pandemic...",
+			description: "The pandemic hit while we were on Elyse's spring break trip with friends in Colorado. Queue Gabe's crash course in Hickory, NC as we waited out the pandemic while Elyse graduated from her undergrad. We made the most of it, making it our goal to see as many National Parks as we could possibly visit!",
 			photos: [
-				{ caption: "Moving Day" },
-				{ caption: "Building Together" },
-				{ caption: "First Meal" },
-				{ caption: "Making it Home" }
+				{
+					caption: "Elyse's remote graudation",
+					image: pandemic_1
+				},
+				{
+					caption: "Pandemic-style hiking",
+					image: pandemic_2
+				},
+				{
+					caption: "Our alien-themed van!",
+					image: pandemic_3
+				},
+				{
+					caption: "Glacier National Park, MT",
+					image: pandemic_4
+				},
 			]
 		},
 		{
-			date: "Fall 2021",
-			title: "Adopting Luna",
-			description: "We welcomed our furry daughter Luna into our lives. This sweet rescue dog completed our little family and brought us so much joy.",
+			date: "August 2020",
+			title: "New family member!",
+			description: "We kicked off a year of new adventures in DC with the addition of our kitty, Yoshi (named after Gabe's favorite Super Smash Bros character)! She brought a spark of joy and energy to an otherwise weird year as we waited out the rest of the pandemic.",
 			photos: [
-				{ caption: "Luna's First Day" },
-				{ caption: "First Walk" },
-				{ caption: "Learning Tricks" },
-				{ caption: "Family of Three" }
+				{
+					caption: "Meet Yoshi!",
+					image: dc_1
+				},
+				{
+					caption: "Taking Yoshi for a ride",
+					image: dc_2
+				},
+				{
+					caption: "Anniversary dinner at Fiola, DC",
+					image: dc_3
+				},
 			]
 		},
 		{
-			date: "Summer 2023",
-			title: "Cross-Country Adventure",
-			description: "We embarked on an epic cross-country road trip, visiting national parks and creating memories that will last a lifetime.",
+			date: "August 2021",
+			title: "HAVAHD",
+			description: "Elyse decided to enroll in a small school in Cambridge, MA for her master's degree. We lived on-campus together for 2 years and experienced the best of what New England had to offer. We also made some great friends along the way, whose footsteps we would follow for our next move...",
 			photos: [
-				{ caption: "The Adventure Map" },
-				{ caption: "Grand Canyon Sunrise" },
-				{ caption: "Yellowstone Trails" },
-				{ caption: "Pacific Coast" },
-				{ caption: "Utah Stars" }
+				{
+					caption: "Baseball at Fenway Park",
+					image: boston_1
+				},
+				{
+					caption: "Trip to Mexico with our friends",
+					image: boston_2
+				},
+				{
+					caption: "Elyse's Harvard graduation",
+					image: boston_3
+				},
 			]
 		},
 		{
-			date: "December 2024",
-			title: "The Proposal",
-			description: "Gabriel proposed during a winter hike to our favorite overlook. With the snow falling gently around us, he got down on one knee and asked Elyse to be his forever.",
+			date: "August 2023",
+			title: "I'M WALKING HERE",
+			description: "When most of our friends deserted Boston, we decided to follow them to NYC! We've made the most of our time in The Big Apple - going to Broadway shows, eating great food, and hosting weekly Survivor watch parties. We've really felt at home here thanks to our wonderful community and all that the city has to offer!",
 			photos: [
-				{ caption: "She Said Yes!" },
-				{ caption: "The Proposal" },
-				{ caption: "The Ring" },
-				{ caption: "Celebration" }
+			]
+		},
+		{
+			date: "January 2025",
+			title: "Will you marry me?",
+			description: "Gabe proposed to Elyse at the first summit of their hiking trip in Chilean Patagonia. Queue an exciting year of travel, job changes, and preparing for the biggest day of our lives!",
+			photos: [
 			]
 		},
 		{
@@ -163,7 +201,7 @@
 
 <!-- Timeline Section -->
 <section class="bg-gray-50 py-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="relative">
 			<!-- Timeline Line -->
 			<div class="absolute left-8 md:left-1/2 transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-gray-300"></div>
@@ -178,29 +216,47 @@
 						<div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
 							<!-- Photo slideshow if photos exist -->
 							{#if event.photos && event.photos.length > 0}
-								<div class="relative aspect-video bg-gray-100 border-b border-gray-100">
+								<!-- 4:3 — a bit taller than 7:5 for more vertical room -->
+								<div class="relative aspect-[4/3] bg-white">
 									<!-- Slideshow container -->
 									<div 
-										class="relative w-full h-full overflow-hidden"
+										class="relative h-full w-full overflow-hidden bg-white"
 										ontouchstart={handleTouchStart}
 										ontouchend={(e) => handleTouchEnd(e, index, event.photos?.length || 0)}
 									>
-										<!-- Photo slides -->
+										<!-- Photo slides: full container height; narrower images get black side bars, wider images are center-cropped -->
 										{#each event.photos as photo, photoIndex}
-											<div class="absolute inset-0 transition-transform duration-300 ease-in-out flex items-center justify-center p-6 {photoIndex === slideshowStates[index].currentIndex ? 'translate-x-0' : photoIndex < slideshowStates[index].currentIndex ? '-translate-x-full' : 'translate-x-full'}">
-												<div class="text-center">
-													<svg class="w-8 h-8 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-													</svg>
-												</div>
+											<div
+												class="absolute inset-0 flex items-center justify-center overflow-hidden bg-white transition-transform duration-300 ease-in-out {photoIndex === slideshowStates[index].currentIndex ? 'translate-x-0' : photoIndex < slideshowStates[index].currentIndex ? '-translate-x-full' : 'translate-x-full'}"
+											>
+												<img
+													src={photo.image}
+													alt={photo.caption}
+													class="h-full w-auto max-w-none shrink-0 select-none"
+													draggable="false"
+												/>
 											</div>
 										{/each}
 									</div>
 
+									<!-- Photo caption (always on top of photo) -->
+									{#if event.photos[slideshowStates[index].currentIndex].caption}
+										<div class="pointer-events-none absolute top-2 left-2 z-10 bg-gray-400/80 text-white text-xs px-2 py-1 rounded max-w-[calc(100%-1rem)]">
+											{event.photos[slideshowStates[index].currentIndex].caption}
+										</div>
+									{/if}
+
+									<!-- Photo counter (only when multiple photos) -->
+									{#if event.photos.length > 1}
+										<div class="pointer-events-none absolute top-2 right-2 z-10 bg-gray-400/80 text-white text-xs px-2 py-1 rounded">
+											{slideshowStates[index].currentIndex + 1} / {event.photos.length}
+										</div>
+									{/if}
+
 									<!-- Navigation arrows (only show if more than 1 photo) -->
 									{#if event.photos.length > 1}
 										<button 
-											class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-400 bg-opacity-70 hover:bg-opacity-90 text-white p-1 rounded-full transition-all duration-200 cursor-pointer"
+											class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 bg-opacity-70 hover:bg-opacity-90 text-white p-1 rounded-full transition-all duration-200 cursor-pointer"
 											onclick={() => prevSlide(index, event.photos?.length || 0)}
 											aria-label="Previous photo"
 										>
@@ -209,7 +265,7 @@
 											</svg>
 										</button>
 										<button 
-											class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-400 bg-opacity-70 hover:bg-opacity-90 text-white p-1 rounded-full transition-all duration-200 cursor-pointer"
+											class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-gray-400 bg-opacity-70 hover:bg-opacity-90 text-white p-1 rounded-full transition-all duration-200 cursor-pointer"
 											onclick={() => nextSlide(index, event.photos?.length || 0)}
 											aria-label="Next photo"
 										>
@@ -217,16 +273,6 @@
 												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 											</svg>
 										</button>
-
-										<!-- Photo caption -->
-										<div class="absolute top-2 left-2 bg-gray-400 bg-opacity-80 text-white text-xs px-2 py-1 rounded">
-											{event.photos[slideshowStates[index].currentIndex].caption}
-										</div>
-
-										<!-- Photo counter -->
-										<div class="absolute top-2 right-2 bg-gray-400 bg-opacity-80 text-white text-xs px-2 py-1 rounded">
-											{slideshowStates[index].currentIndex + 1} / {event.photos.length}
-										</div>
 									{/if}
 								</div>
 							{/if}
@@ -250,47 +296,5 @@
 			"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
 		</blockquote>
 		<cite class="text-gray-500">— Maya Angelou</cite>
-	</div>
-</section>
-
-<!-- Fun Facts Section -->
-<section class="bg-gray-50 py-20">
-	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
-			<h2 class="text-3xl sm:text-4xl font-light text-black mb-4">Fun Facts About Us</h2>
-			<div class="w-24 h-px bg-black mx-auto"></div>
-		</div>
-
-		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-			<div class="text-center bg-white p-6 rounded-lg">
-				<h3 class="text-lg font-light text-black mb-2">First Dance Song</h3>
-				<p class="text-gray-600">"Perfect" by Ed Sheeran</p>
-			</div>
-			
-			<div class="text-center bg-white p-6 rounded-lg">
-				<h3 class="text-lg font-light text-black mb-2">Favorite Date Night</h3>
-				<p class="text-gray-600">Cooking dinner together at home</p>
-			</div>
-			
-			<div class="text-center bg-white p-6 rounded-lg">
-				<h3 class="text-lg font-light text-black mb-2">Dream Honeymoon</h3>
-				<p class="text-gray-600">Safari in Kenya</p>
-			</div>
-			
-			<div class="text-center bg-white p-6 rounded-lg">
-				<h3 class="text-lg font-light text-black mb-2">Shared Hobby</h3>
-				<p class="text-gray-600">Hiking and photography</p>
-			</div>
-			
-			<div class="text-center bg-white p-6 rounded-lg">
-				<h3 class="text-lg font-light text-black mb-2">Years Together</h3>
-				<p class="text-gray-600">8 amazing years</p>
-			</div>
-			
-			<div class="text-center bg-white p-6 rounded-lg">
-				<h3 class="text-lg font-light text-black mb-2">Favorite Memory</h3>
-				<p class="text-gray-600">Watching the sunrise from our tent</p>
-			</div>
-		</div>
 	</div>
 </section>

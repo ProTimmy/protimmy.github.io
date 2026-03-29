@@ -62,8 +62,7 @@
 		</p>
 		<div class="bg-gray-50 p-8 rounded-lg">
 			<p class="text-gray-600 mb-4">Send us your wedding photos</p>
-			<p class="text-sm text-gray-500">Email: <span class="text-black">photos@gabrielandelyse.com</span></p>
-			<p class="text-sm text-gray-500 mt-2">Or tag us on social media with <span class="text-black">#GabrielAndElyse2026</span></p>
+			<p class="text-sm text-gray-500">Email: <span class="text-black">info@timotei.wedding</span></p>
 		</div>
 	</div>
 </section>
