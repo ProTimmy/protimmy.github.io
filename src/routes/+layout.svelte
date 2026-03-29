@@ -10,16 +10,35 @@
 	let isMobileMenuOpen = $state(false);
 	let daysUntilWedding = $state(0);
 	let showCountdown = $state(true);
+	const iframeRoutes = ['/rsvp', '/registry'];
+	const isIframeRoute = $derived(iframeRoutes.includes($page.url.pathname));
+	const isDesktopViewport = $derived.by(() => {
+		if (typeof window === 'undefined') return true;
+		return window.matchMedia('(min-width: 1024px)').matches;
+	});
+	const isNavCollapsed = $derived(scrollProgress && !isIframeRoute);
+	let iframeTopOffset = $state(0);
+	let desktopNavEl: HTMLElement | null = null;
+	let mobileNavEl: HTMLElement | null = null;
+
+	function updateIframeOffset() {
+		if (typeof window === 'undefined') return;
+		const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+		const activeNav = isDesktop ? desktopNavEl : mobileNavEl;
+		if (!activeNav) return;
+		// Mobile nav is sticky and remains in normal flow, so no extra top offset is needed.
+		iframeTopOffset = isDesktop ? Math.max(0, Math.ceil(activeNav.getBoundingClientRect().bottom)) : 0;
+	}
 
 	const navItems = [
 		{ name: 'Home', href: '/' },
-		{ name: 'RSVP', href: 'https://withjoy.com/gabriel-and-elyse/rsvp' },
+		{ name: 'RSVP', href: '/rsvp' },
 		{ name: 'Our Story', href: '/our-story' },
 		{ name: 'Photos', href: '/photos' },
 		{ name: 'Q + A', href: '/qa' },
 		{ name: 'Travel', href: '/travel' },
 		{ name: 'Things to Do', href: '/things-to-do' },
-		{ name: 'Registry', href: 'https://withjoy.com/gabriel-and-elyse/registry' }
+		{ name: 'Registry', href: '/registry' }
 	];
 
 	onMount(() => {
@@ -28,6 +47,7 @@
 
 		const handleScroll = () => {
 			scrollProgress = document.body.scrollTop >= maxScroll || document.documentElement.scrollTop >= maxScroll ? true : false;
+			updateIframeOffset();
 		};
 
 		const calculateDaysUntilWedding = () => {
@@ -46,16 +66,30 @@
 
 		// Calculate initial days
 		calculateDaysUntilWedding();
+		updateIframeOffset();
 
 		// Update daily at midnight
 		const updateInterval = setInterval(calculateDaysUntilWedding, 24 * 60 * 60 * 1000);
 
 		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', updateIframeOffset);
 		
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('resize', updateIframeOffset);
 			clearInterval(updateInterval);
 		};
+	});
+
+	$effect(() => {
+		if (!isIframeRoute || typeof window === 'undefined') return;
+		window.scrollTo(0, 0);
+		// Run after DOM/nav transitions settle so iframe top padding is accurate on route re-entry.
+		const raf1 = requestAnimationFrame(() => {
+			updateIframeOffset();
+			requestAnimationFrame(updateIframeOffset);
+		});
+		return () => cancelAnimationFrame(raf1);
 	});
 
 	function toggleMobileMenu() {
@@ -81,11 +115,12 @@
 	<div class="bg-white">
 		<!-- Desktop Navigation -->
 		<nav
-			class="fixed transition-all duration-500 ease-out py-4 top-{scrollProgress ? 0 : 6} left-6 right-6 z-50 hidden lg:block"
+			bind:this={desktopNavEl}
+			class="fixed transition-all duration-500 ease-out py-4 top-{isNavCollapsed ? 0 : 6} left-6 right-6 z-50 hidden lg:block"
 			style="
 				background-color: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(4px);
-				box-shadow: 0 1px 3px rgba(0, 0, 0, {scrollProgress ? 0.1 : 0});
+				box-shadow: 0 1px 3px rgba(0, 0, 0, {isNavCollapsed ? 0.1 : 0});
 			"
 		>
 			<div class="mx-auto max-w-7xl transition-all duration-500 ease-out pr-45 pl-30 xl:pl-45">
@@ -98,10 +133,10 @@
 							style="
 								font-family: 'Dancing Script', cursive; 
 								font-weight: 600;
-								transform: translate({scrollProgress ? -40 : 0}%, {scrollProgress ? 30 : 0}%);
+								transform: translate({isNavCollapsed ? -40 : 0}%, {isNavCollapsed ? 30 : 0}%);
 							"
 						>
-							<a href="/" class="transition-colors duration-200 hover:text-gray-600 {scrollProgress ? 'text-5xl' : 'text-6xl' }">
+							<a href="/" class="transition-colors duration-200 hover:text-gray-600 {isNavCollapsed ? 'text-5xl' : 'text-6xl' }">
 								Gabriel & Elyse
 							</a>
 						</h1>
@@ -111,15 +146,15 @@
 					<div
 						class="overflow-hidden text-center transition-all duration-500 ease-out"
 						style="
-							max-height: {scrollProgress ? 0 : 200}px;
-							opacity: {scrollProgress ? 0 : 1};
-							transform: translateY({scrollProgress ? -30 : 0}px) scaleY({scrollProgress ? 0.7 : 1});
+							max-height: {isNavCollapsed ? 0 : 200}px;
+							opacity: {isNavCollapsed ? 0 : 1};
+							transform: translateY({isNavCollapsed ? -30 : 0}px) scaleY({isNavCollapsed ? 0.7 : 1});
 						"
 					>
 						<p
 							class="mb-2 text-lg font-light text-gray-600 transition-all duration-500 ease-out"
 							style="
-								transform: translateY({scrollProgress ? -20 : 0}px);
+								transform: translateY({isNavCollapsed ? -20 : 0}px);
 							"
 						>
 							August 1, 2026 • Glenville, NC, USA
@@ -128,7 +163,7 @@
 							<p
 								class="text-base mb-6 text-gray-500 transition-all duration-500 ease-out"
 								style="
-									transform: translateY({scrollProgress ? -15 : 0}px);
+									transform: translateY({isNavCollapsed ? -15 : 0}px);
 								"
 							>
 								{daysUntilWedding} Day{daysUntilWedding === 1 ? '' : 's'} To Go!
@@ -140,7 +175,7 @@
 					<div
 						class="flex justify-center space-x-8 transition-all duration-500 ease-out"
 						style="
-							transform: translate({scrollProgress ? 30 : 0}%, {scrollProgress ? -175 : 0}%);
+							transform: translate({isNavCollapsed ? 30 : 0}%, {isNavCollapsed ? -175 : 0}%);
 						"
 
 					>
@@ -161,7 +196,7 @@
 		</nav>
 
 		<!-- Mobile Navigation -->
-		<nav class="sticky top-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-sm shadow-sm">
+		<nav bind:this={mobileNavEl} class="sticky top-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-sm shadow-sm">
 			<div class="mx-auto max-w-7xl px-4 py-3">
 				<div class="flex items-center justify-between">
 					<!-- Names -->
@@ -242,25 +277,30 @@
 
 		<!-- Main Content -->
 		<main
-			class="transition-all duration-500 ease-out lg:pt-80 pt-10"
+			class="transition-all duration-500 ease-out box-border {isIframeRoute ? 'pt-0 overflow-hidden' : 'lg:pt-80 pt-10'}"
+			style={isIframeRoute
+				? `height: calc(100dvh - ${isDesktopViewport ? '3rem' : '0rem'}); padding-top: ${iframeTopOffset}px;`
+				: ''}
 		>
 			{@render children?.()}
 		</main>
 
 		<!-- Footer -->
-		<footer class="border-t border-gray-100 bg-gray-50">
-			<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-				<div class="text-center">
-					<h3
-						class="mb-2 text-2xl text-black"
-						style="font-family: 'Dancing Script', cursive; font-weight: 600;"
-					>
-						Gabriel & Elyse Timotei
-					</h3>
-					<p class="mb-4 text-gray-600">August 1, 2026 • Glenville, NC, USA</p>
-					<p class="text-sm text-gray-500">We can't wait to celebrate with you!</p>
+		{#if !isIframeRoute}
+			<footer class="border-t border-gray-100 bg-gray-50">
+				<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+					<div class="text-center">
+						<h3
+							class="mb-2 text-2xl text-black"
+							style="font-family: 'Dancing Script', cursive; font-weight: 600;"
+						>
+							Gabriel & Elyse Timotei
+						</h3>
+						<p class="mb-4 text-gray-600">August 1, 2026 • Glenville, NC, USA</p>
+						<p class="text-sm text-gray-500">We can't wait to celebrate with you!</p>
+					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		{/if}
 	</div>
 </div>
