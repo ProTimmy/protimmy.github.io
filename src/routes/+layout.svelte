@@ -10,7 +10,7 @@
 	let isMobileMenuOpen = $state(false);
 	let daysUntilWedding = $state(0);
 	let showCountdown = $state(true);
-	const iframeRoutes = ['/rsvp', '/registry'];
+	const iframeRoutes = ['/rsvp'];
 	const isIframeRoute = $derived(iframeRoutes.includes($page.url.pathname));
 	const isDesktopViewport = $derived.by(() => {
 		if (typeof window === 'undefined') return true;
@@ -38,7 +38,7 @@
 		{ name: 'Q + A', href: '/qa' },
 		{ name: 'Travel', href: '/travel' },
 		{ name: 'Things to Do', href: '/things-to-do' },
-		{ name: 'Registry', href: '/registry' }
+		{ name: 'Registry', href: 'https://withjoy.com/gabriel-and-elyse/registry' }
 	];
 
 	onMount(() => {

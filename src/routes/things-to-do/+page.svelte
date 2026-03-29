@@ -21,15 +21,6 @@
 			season: "Year-round"
 		},
 		{
-			name: "Looking Glass Falls",
-			category: "Nature",
-			description: "A stunning 60-foot waterfall that you can walk behind. Easily accessible with a short walk from the parking area.",
-			location: "Blue Ridge Parkway",
-			duration: "30 minutes",
-			difficulty: "Easy",
-			season: "Year-round"
-		},
-		{
 			name: "Cashiers Farmers Market",
 			category: "Shopping",
 			description: "Local farmers market featuring fresh produce, artisanal crafts, and regional specialties. Great for unique souvenirs.",
@@ -56,14 +47,6 @@
 			season: "Year-round"
 		},
 		{
-			name: "Village Green Antique Mall",
-			category: "Shopping",
-			description: "Large antique mall with multiple vendors offering everything from vintage furniture to collectibles and local crafts.",
-			location: "Cashiers Village",
-			duration: "1-3 hours",
-			season: "Year-round"
-		},
-		{
 			name: "Panthertown Valley",
 			category: "Hiking",
 			description: "Known as the 'Yosemite of the East' with granite domes, waterfalls, and pristine wilderness. Multiple trail options.",
@@ -86,22 +69,6 @@
 			description: "Popular local restaurant known for great burgers, craft beer, and live music. Casual mountain atmosphere.",
 			location: "Downtown Cashiers",
 			duration: "1-2 hours",
-			season: "Year-round"
-		},
-		{
-			name: "Sapphire Valley Ski Area",
-			category: "Recreation",
-			description: "Small ski resort perfect for beginners and families. Also offers tubing and other winter activities.",
-			location: "Sapphire, NC",
-			duration: "Half or full day",
-			season: "December-March"
-		},
-		{
-			name: "Cashiers Designer Outlets",
-			category: "Shopping",
-			description: "Outlet shopping with popular brands at discounted prices. Good for rainy day activities.",
-			location: "US Highway 64",
-			duration: "2-4 hours",
 			season: "Year-round"
 		},
 		{

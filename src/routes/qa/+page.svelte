@@ -67,7 +67,7 @@
 		},
 		{
 			question: "Will you have a wedding registry?",
-			answer: "Yes! We will have some items listed in the <a href='/registry'>wedding registry page</a>. We plan to continue living in our NY apartment and have collected everything we need for our daily lives. At this phase of our lives, we are most excited about new experiences. Wedding registry items may take the form of recommending new experiences, contributing to our honeymoon celebration, or our homeowner fund to support what comes next. Nonetheless, your presence is the greatest gift, and we are so excited to celebrate with you all.",
+			answer: "Yes! We will have some items listed in the <a href='https://withjoy.com/gabriel-and-elyse/registry'>wedding registry page</a>. We plan to continue living in our NY apartment and have collected everything we need for our daily lives. At this phase of our lives, we are most excited about new experiences. Wedding registry items may take the form of recommending new experiences, contributing to our honeymoon celebration, or our homeowner fund to support what comes next. Nonetheless, your presence is the greatest gift, and we are so excited to celebrate with you all.",
 			isOpen: false
 		},
 		{
