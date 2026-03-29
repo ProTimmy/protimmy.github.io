@@ -248,7 +248,7 @@
 			<!-- Mobile Navigation Menu -->
 			<div
 				class="overflow-hidden transition-all duration-300 ease-in-out {isMobileMenuOpen
-					? 'max-h-96 opacity-100'
+					? 'max-h-[min(85vh,32rem)] opacity-100'
 					: 'max-h-0 opacity-0'}"
 			>
 				<div
@@ -256,12 +256,12 @@
 						? 'translate-y-0'
 						: '-translate-y-4'}"
 				>
-					<div class="px-4 py-4">
+					<div class="px-4 pt-4 pb-8">
 						{#each navItems as item}
 							<a
 								href={item.href}
 								onclick={closeMobileMenu}
-								class="block transform py-3 font-light tracking-wide text-black transition-all duration-200 hover:text-gray-600 {isMobileMenuOpen
+								class="block transform py-3.5 font-light tracking-wide text-black transition-all duration-200 hover:text-gray-600 {isMobileMenuOpen
 									? 'translate-x-0 opacity-100'
 									: 'translate-x-4 opacity-0'} {$page.url.pathname === item.href
 									? 'border-l-2 border-black pl-4'

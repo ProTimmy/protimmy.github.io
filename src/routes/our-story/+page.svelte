@@ -13,6 +13,13 @@
 	import boston_1 from '$lib/assets/our-story/boston-1.jpeg';
 	import boston_2 from '$lib/assets/our-story/boston-2.jpeg';
 	import boston_3 from '$lib/assets/our-story/boston-3.jpg';
+	import nyc_1 from '$lib/assets/our-story/nyc-1.jpeg';
+	import nyc_2 from '$lib/assets/our-story/nyc-2.jpeg';
+	import nyc_3 from '$lib/assets/our-story/nyc-3.jpeg';
+	import nyc_4 from '$lib/assets/our-story/nyc-4.jpeg';
+	import proposal_1 from '$lib/assets/our-story/proposal-1.jpg';
+	import proposal_2 from '$lib/assets/our-story/proposal-2.jpeg';
+	import proposal_3 from '$lib/assets/our-story/proposal-3.jpeg';
 
 	interface TimelineEvent {
 		date: string;
@@ -120,6 +127,22 @@
 			title: "I'M WALKING HERE",
 			description: "When most of our friends deserted Boston, we decided to follow them to NYC! We've made the most of our time in The Big Apple - going to Broadway shows, eating great food, and hosting weekly Survivor watch parties. We've really felt at home here thanks to our wonderful community and all that the city has to offer!",
 			photos: [
+				{
+					caption: "US Open",
+					image: nyc_1
+				},
+				{
+					caption: "Views from Central Park",
+					image: nyc_2
+				},
+				{
+					caption: "Elyse's masquerade birthday party",
+					image: nyc_3
+				},
+				{
+					caption: "Brooklyn Half Marathon",
+					image: nyc_4
+				},
 			]
 		},
 		{
@@ -127,6 +150,15 @@
 			title: "Will you marry me?",
 			description: "Gabe proposed to Elyse at the first summit of their hiking trip in Chilean Patagonia. Queue an exciting year of travel, job changes, and preparing for the biggest day of our lives!",
 			photos: [
+				{
+					image: proposal_1
+				},
+				{
+					image: proposal_2
+				},
+				{
+					image: proposal_3
+				},
 			]
 		},
 		{
