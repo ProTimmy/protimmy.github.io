@@ -314,6 +314,7 @@
 						</h3>
 						<p class="mb-4 text-gray-600">August 1, 2026 • Glenville, NC, USA</p>
 						<p class="text-sm text-gray-500">We can't wait to celebrate with you!</p>
+						<p class="mt-3 text-sm text-gray-500">Questions? Reach us at <a href="mailto:info@timotei.wedding" class="text-black hover:underline">info@timotei.wedding</a></p>
 					</div>
 				</div>
 			</footer>

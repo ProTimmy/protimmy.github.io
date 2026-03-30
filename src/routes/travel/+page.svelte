@@ -150,7 +150,7 @@
 				</div>
 				<h3 class="text-xl font-light text-black mb-4">By Car</h3>
 				<div class="text-left bg-white p-6 rounded-lg">
-					<div>
+					<div class="mb-4">
 						<p class="font-medium text-black mb-1">From Asheville</p>
 						<p class="text-sm text-gray-600">1.5 hours via US-64</p>
 					</div>
@@ -158,7 +158,7 @@
 						<p class="font-medium text-black mb-1">From Atlanta</p>
 						<p class="text-sm text-gray-600">3 hours via I-85 & US-441</p>
 					</div>
-					<div class="mb-4">
+					<div>
 						<p class="font-medium text-black mb-1">From Charlotte</p>
 						<p class="text-sm text-gray-600">3 hours via I-85 & US-64</p>
 					</div>

@@ -322,13 +322,3 @@
 		</div>
 	</div>
 </section>
-
-<!-- Quote Section -->
-<section class="bg-white py-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<blockquote class="text-2xl sm:text-3xl font-light text-black italic mb-8">
-			"In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
-		</blockquote>
-		<cite class="text-gray-500">— Maya Angelou</cite>
-	</div>
-</section>
