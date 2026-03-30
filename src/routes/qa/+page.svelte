@@ -1,9 +1,9 @@
 <script lang="ts">
-	import cpf from '$lib/assets/faq/cpf.jpg';
-	import outfits_mens1 from '$lib/assets/faq/outfits-mens-1.jpeg';
-	import outfits_mens2 from '$lib/assets/faq/outfits-mens-2.jpeg';
-	import outfits_womens1 from '$lib/assets/faq/outfits-womens-1.jpeg';
-	import outfits_womens2 from '$lib/assets/faq/outfits-womens-2.jpeg';
+	const cpf = '/faq/cpf.jpg';
+	const outfits_mens1 = '/faq/outfits-mens-1.jpeg';
+	const outfits_mens2 = '/faq/outfits-mens-2.jpeg';
+	const outfits_womens1 = '/faq/outfits-womens-1.jpeg';
+	const outfits_womens2 = '/faq/outfits-womens-2.jpeg';
 
 	interface FAQ {
 		question: string;
@@ -110,14 +110,19 @@
 
 <!-- Hero Section -->
 <section class="bg-white pb-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
-			Q + A
-		</h1>
-		<div class="w-24 h-px bg-black mx-auto mb-8"></div>
-		<p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-			Everything you need to know about our special day. Can't find what you're looking for? Don't hesitate to reach out!
-		</p>
+	<div
+		class="w-full bg-cover bg-center py-24 mb-12"
+		style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/faq/cpf.png');"
+	>
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wider mb-6">
+				Q + A
+			</h1>
+			<div class="w-24 h-px bg-white mx-auto mb-8"></div>
+			<p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+				Everything you need to know about our special day. Can't find what you're looking for? Don't hesitate to reach out!
+			</p>
+		</div>
 	</div>
 </section>
 

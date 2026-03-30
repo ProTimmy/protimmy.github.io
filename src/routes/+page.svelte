@@ -1,6 +1,3 @@
-<script lang="ts">
-	import cpf from '$lib/assets/home/cpf.png';
-</script>
 
 <svelte:head>
 	<title>Timotei Wedding</title>
@@ -8,13 +5,18 @@
 
 <!-- Hero Section -->
 <section class="relative bg-white pb-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h2 class="text-3xl sm:text-4xl font-light text-black mb-4">Welcome to Our Wedding</h2>
-		<div class="w-24 h-px bg-black mx-auto mb-8"></div>
-		<p class="text-lg text-gray-600 max-w-2xl mx-auto">
-			We're so excited to celebrate our special day with our family and friends. 
-			Join us as we begin our journey as husband and wife in the beautiful mountains of North Carolina.
-		</p>
+	<div
+		class="w-full bg-cover bg-center py-24 mb-12"
+		style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/home/background.png');"
+	>
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-3xl sm:text-4xl font-light text-white mb-4">Welcome to Our Wedding</h2>
+			<div class="w-24 h-px bg-white mx-auto mb-8"></div>
+			<p class="text-lg text-gray-200 max-w-2xl mx-auto">
+				We're so excited to celebrate our special day with our family and friends.
+				Join us as we begin our journey as husband and wife in the beautiful mountains of North Carolina.
+			</p>
+		</div>
 	</div>
 </section>
 
@@ -88,7 +90,3 @@
 	</div>
 </section>
 
-<!-- Love Quote Section -->
-<section class="bg-white pb-20">
-	<img src={cpf} alt="" class="w-auto rounded-lg px-50"/>
-</section>

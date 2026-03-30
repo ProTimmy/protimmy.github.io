@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	const favicon = '/favicon.svg';
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
@@ -34,11 +34,11 @@
 		{ name: 'Home', href: '/' },
 		{ name: 'RSVP', href: '/rsvp' },
 		{ name: 'Our Story', href: '/our-story' },
-		{ name: 'Photos', href: '/photos' },
 		{ name: 'Q + A', href: '/qa' },
 		{ name: 'Travel', href: '/travel' },
 		{ name: 'Things to Do', href: '/things-to-do' },
-		{ name: 'Registry', href: 'https://withjoy.com/gabriel-and-elyse/registry' }
+		{ name: 'Registry', href: 'https://withjoy.com/gabriel-and-elyse/registry' },
+		{ name: 'Wedding Photos', href: '/photos' },
 	];
 
 	onMount(() => {
@@ -252,9 +252,10 @@
 					: 'max-h-0 opacity-0'}"
 			>
 				<div
-					class="transform border-t border-gray-100 bg-white/95 backdrop-blur-sm transition-transform duration-300 ease-in-out {isMobileMenuOpen
+					class="transform border-t border-gray-100 backdrop-blur-sm transition-transform duration-300 ease-in-out {isMobileMenuOpen
 						? 'translate-y-0'
 						: '-translate-y-4'}"
+					style="background-color: rgba(255,255,255,0.95);"
 				>
 					<div class="px-4 pt-4 pb-8">
 						{#each navItems as item}

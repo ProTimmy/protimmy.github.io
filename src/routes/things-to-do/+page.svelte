@@ -81,16 +81,6 @@
 		}
 	];
 
-	const categories = ['All', 'Hiking', 'Nature', 'Shopping', 'Recreation', 'Dining', 'Sightseeing'];
-	let selectedCategory = $state('All');
-
-	let filteredActivities = $derived(selectedCategory === 'All' 
-		? activities 
-		: activities.filter(activity => activity.category === selectedCategory));
-
-	function selectCategory(category: string) {
-		selectedCategory = category;
-	}
 </script>
 
 <svelte:head>
@@ -99,40 +89,24 @@
 
 <!-- Hero Section -->
 <section class="bg-white pb-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
-			Things to Do
-		</h1>
-		<div class="w-24 h-px bg-black mx-auto mb-8"></div>
-		<p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-			Make the most of your visit to the beautiful Cashiers area with our recommendations for activities, dining, and attractions.
-		</p>
-	</div>
-</section>
-
-<!-- Filter Section -->
-<section class="bg-gray-50 py-12">
-	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex flex-wrap justify-center gap-4">
-			{#each categories as category}
-				<button
-					onclick={() => selectCategory(category)}
-					class="px-6 py-2 text-sm font-ligh cursor-pointer tracking-wide transition-colors duration-200 {selectedCategory === category 
-						? 'bg-black text-white' 
-						: 'bg-white text-black border border-gray-200 hover:border-black'}"
-				>
-					{category}
-				</button>
-			{/each}
+	<div class="w-full bg-cover bg-center py-24 mb-12" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/things-to-do/background.png');">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wider mb-6">
+				Things to Do
+			</h1>
+			<div class="w-24 h-px bg-white mx-auto mb-8"></div>
+			<p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+				Make the most of your visit to the beautiful Cashiers area with our recommendations for activities, dining, and attractions.
+			</p>
 		</div>
 	</div>
 </section>
 
 <!-- Activities Grid -->
-<section class="bg-gray-50 pb-20">
+<section class="bg-gray-50 py-20">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="grid lg:grid-cols-2 gap-6">
-			{#each filteredActivities as activity}
+			{#each activities as activity}
 				<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
 					<div class="flex justify-between items-start mb-3">
 						<h3 class="text-xl font-light text-black">{activity.name}</h3>

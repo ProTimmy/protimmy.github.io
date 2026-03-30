@@ -9,14 +9,16 @@
 
 <!-- Hero Section -->
 <section class="bg-white pb-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
-			Wedding Photos
-		</h1>
-		<div class="w-24 h-px bg-black mx-auto mb-8"></div>
-		<p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-			Our wedding day memories will be shared here after {weddingDate}.
-		</p>
+	<div class="w-full bg-cover bg-center py-24 mb-12" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/photos/background.png');">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wider mb-6">
+				Wedding Photos
+			</h1>
+			<div class="w-24 h-px bg-white mx-auto mb-8"></div>
+			<p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+				Our wedding day memories will be shared here after {weddingDate}.
+			</p>
+		</div>
 	</div>
 </section>
 

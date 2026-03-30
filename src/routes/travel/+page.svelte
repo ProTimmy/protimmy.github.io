@@ -16,7 +16,7 @@
 		website: "https://www.hilton.com/en/hotels/casnchx-hampton-suites-cashiers-sapphire-valley/",
 		description: "Modern hotel with complimentary breakfast and indoor pool. Reliable comfort with all the amenities.",
 		distance: "8 minutes from venue",
-		images: ["/hotels/hampton-inn-1.avif", "/hotels/hampton-inn-2.avif", "/hotels/hampton-inn-3.jpg"]
+		images: ["/travel/hampton-inn-1.avif", "/travel/hampton-inn-2.avif", "/travel/hampton-inn-3.jpg"]
 	};
 
 	const otherHotels: Hotel[] = [
@@ -27,7 +27,7 @@
 			website: "hotelcashiers.com",
 			description: "A boutique hotel nestled in the charming mountain village of Cashiers, offering a refined yet relaxed retreat with well-appointed rooms and proximity to local shopping and dining.",
 			distance: "5 minutes from venue",
-			images: ["/hotels/hotel-cashiers-1.webp", "/hotels/hotel-cashiers-2.avif", "/hotels/hotel-cashiers-3.jpg"]
+			images: ["/travel/hotel-cashiers-1.webp", "/travel/hotel-cashiers-2.avif", "/travel/hotel-cashiers-3.jpg"]
 		},
 		{
 			name: "The Wells Hotel",
@@ -36,7 +36,7 @@
 			website: "thewellscashiers.com",
 			description: "A charming boutique hotel in the heart of Cashiers, featuring an on-site brewery and a relaxed mountain atmosphere.",
 			distance: "5 minutes from venue",
-			images: ["/hotels/the-wells-hotel-1.jpg", "/hotels/the-wells-hotel-2.jpg", "/hotels/the-wells-hotel-3.jpg"]
+			images: ["/travel/the-wells-hotel-1.jpg", "/travel/the-wells-hotel-2.jpg", "/travel/the-wells-hotel-3.jpg"]
 		},
 		{
 			name: "High Hampton Resort",
@@ -45,7 +45,7 @@
 			website: "highhamptonresort.com",
 			description: "Historic mountain resort with golf course, spa services, and beautiful lake views. Great for families.",
 			distance: "10 minutes from venue",
-			images: ["/hotels/high-hampton-resort-1.webp", "/hotels/high-hampton-resort-2.webp", "/hotels/high-hampton-resort-3.jpg"]
+			images: ["/travel/high-hampton-resort-1.webp", "/travel/high-hampton-resort-2.webp", "/travel/high-hampton-resort-3.jpg"]
 		}
 	];
 
@@ -94,14 +94,16 @@
 
 <!-- Hero Section -->
 <section class="bg-white pb-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
-			Travel
-		</h1>
-		<div class="w-24 h-px bg-black mx-auto mb-8"></div>
-		<p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-			Everything you need to know about getting to Cashiers, North Carolina and where to stay for our wedding weekend.
-		</p>
+	<div class="w-full bg-cover bg-center py-24 mb-12" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/travel/background.png');">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wider mb-6">
+				Travel
+			</h1>
+			<div class="w-24 h-px bg-white mx-auto mb-8"></div>
+			<p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+				Everything you need to know about getting to Cashiers, North Carolina and where to stay for our wedding weekend.
+			</p>
+		</div>
 	</div>
 </section>
 
@@ -251,16 +253,10 @@
 							</svg>
 							<a href={phoneHref(featuredHotel.phone)} class="text-sky-500 hover:text-sky-700 md:pointer-events-none">{featuredHotel.phone}</a>
 						</div>
-						<div class="flex items-center text-gray-600">
-							<svg class="w-4 h-4 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
-							</svg>
-							<a href={websiteUrl(featuredHotel.website)} target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:text-sky-700 hover:underline">Website</a>
-						</div>
 					</div>
-					<button class="mt-6 w-full px-4 py-2 bg-black text-white hover:bg-gray-800 transition-colors duration-200 font-light tracking-wide cursor-pointer">
+					<a href={websiteUrl(featuredHotel.website)} target="_blank" rel="noopener noreferrer" class="mt-6 block w-full px-4 py-2 bg-black text-white hover:bg-gray-800 transition-colors duration-200 font-light tracking-wide cursor-pointer text-center">
 						Book Now
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -317,16 +313,10 @@
 									</svg>
 									<a href={phoneHref(hotel.phone)} class="text-sky-500 hover:text-sky-700 md:pointer-events-none">{hotel.phone}</a>
 								</div>
-								<div class="flex items-center text-gray-600">
-									<svg class="w-4 h-4 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
-									</svg>
-									<a href={websiteUrl(hotel.website)} target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:text-sky-700 hover:underline">Website</a>
-								</div>
 							</div>
-							<button class="mt-6 w-full px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200 font-light tracking-wide cursor-pointer">
+							<a href={websiteUrl(hotel.website)} target="_blank" rel="noopener noreferrer" class="mt-6 block w-full px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200 font-light tracking-wide cursor-pointer text-center">
 								Book Now
-							</button>
+							</a>
 						</div>
 					</div>
 				{/each}

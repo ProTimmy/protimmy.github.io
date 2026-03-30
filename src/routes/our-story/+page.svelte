@@ -1,25 +1,25 @@
 <script lang="ts">
-	import college_years_1 from '$lib/assets/our-story/college-years-1.jpg';
-	import officially_official_1 from '$lib/assets/our-story/officially-official-1.jpg';
-	import officially_official_2 from '$lib/assets/our-story/officially-official-2.jpeg';
-	import officially_official_3 from '$lib/assets/our-story/officially-official-3.jpeg';
-	import pandemic_1 from '$lib/assets/our-story/pandemic-1.jpg';
-	import pandemic_2 from '$lib/assets/our-story/pandemic-2.jpeg';
-	import pandemic_3 from '$lib/assets/our-story/pandemic-3.jpg';
-	import pandemic_4 from '$lib/assets/our-story/pandemic-4.jpeg';
-	import dc_1 from '$lib/assets/our-story/dc-1.jpeg';
-	import dc_2 from '$lib/assets/our-story/dc-2.jpg';
-	import dc_3 from '$lib/assets/our-story/dc-3.jpeg';
-	import boston_1 from '$lib/assets/our-story/boston-1.jpeg';
-	import boston_2 from '$lib/assets/our-story/boston-2.jpeg';
-	import boston_3 from '$lib/assets/our-story/boston-3.jpg';
-	import nyc_1 from '$lib/assets/our-story/nyc-1.jpeg';
-	import nyc_2 from '$lib/assets/our-story/nyc-2.jpeg';
-	import nyc_3 from '$lib/assets/our-story/nyc-3.jpeg';
-	import nyc_4 from '$lib/assets/our-story/nyc-4.jpeg';
-	import proposal_1 from '$lib/assets/our-story/proposal-1.jpg';
-	import proposal_2 from '$lib/assets/our-story/proposal-2.jpeg';
-	import proposal_3 from '$lib/assets/our-story/proposal-3.jpeg';
+	const college_years_1 = '/our-story/college-years-1.JPG';
+	const officially_official_1 = '/our-story/officially-official-1.jpg';
+	const officially_official_2 = '/our-story/officially-official-2.jpeg';
+	const officially_official_3 = '/our-story/officially-official-3.jpeg';
+	const pandemic_1 = '/our-story/pandemic-1.JPG';
+	const pandemic_2 = '/our-story/pandemic-2.jpeg';
+	const pandemic_3 = '/our-story/pandemic-3.JPG';
+	const pandemic_4 = '/our-story/pandemic-4.jpeg';
+	const dc_1 = '/our-story/dc-1.jpeg';
+	const dc_2 = '/our-story/dc-2.jpg';
+	const dc_3 = '/our-story/dc-3.jpeg';
+	const boston_1 = '/our-story/boston-1.jpeg';
+	const boston_2 = '/our-story/boston-2.jpeg';
+	const boston_3 = '/our-story/boston-3.JPG';
+	const nyc_1 = '/our-story/nyc-1.jpeg';
+	const nyc_2 = '/our-story/nyc-2.jpeg';
+	const nyc_3 = '/our-story/nyc-3.jpeg';
+	const nyc_4 = '/our-story/nyc-4.jpeg';
+	const proposal_1 = '/our-story/proposal-1.JPG';
+	const proposal_2 = '/our-story/proposal-2.jpeg';
+	const proposal_3 = '/our-story/proposal-3.jpeg';
 
 	interface TimelineEvent {
 		date: string;
@@ -128,7 +128,7 @@
 			description: "When most of our friends deserted Boston, we decided to follow them to NYC! We've made the most of our time in The Big Apple - going to Broadway shows, eating great food, and hosting weekly Survivor watch parties. We've really felt at home here thanks to our wonderful community and all that the city has to offer!",
 			photos: [
 				{
-					caption: "US Open",
+					caption: "Kebab party in our patio",
 					image: nyc_1
 				},
 				{
@@ -220,14 +220,16 @@
 
 <!-- Hero Section -->
 <section class="bg-white pb-20">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-black tracking-wider mb-6">
-			Our Story
-		</h1>
-		<div class="w-24 h-px bg-black mx-auto mb-8"></div>
-		<p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-			Every love story is beautiful, but ours is our favorite. Here's how our journey began and where it's taking us.
-		</p>
+	<div class="w-full bg-cover bg-center py-24 mb-12" style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('/our-story/background.jpeg');">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h1 class="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wider mb-6">
+				Our Story
+			</h1>
+			<div class="w-24 h-px bg-white mx-auto mb-8"></div>
+			<p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+				Every love story is beautiful, but ours is our favorite. Here's how our journey began and where it's taking us.
+			</p>
+		</div>
 	</div>
 </section>
 
