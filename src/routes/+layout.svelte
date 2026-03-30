@@ -18,6 +18,7 @@
 	});
 	const isNavCollapsed = $derived(scrollProgress && !isIframeRoute);
 	let iframeTopOffset = $state(0);
+	let mobileNavHeight = $state(0);
 	let desktopNavEl: HTMLElement | null = null;
 	let mobileNavEl: HTMLElement | null = null;
 
@@ -26,7 +27,6 @@
 		const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
 		const activeNav = isDesktop ? desktopNavEl : mobileNavEl;
 		if (!activeNav) return;
-		// Mobile nav is sticky and remains in normal flow, so no extra top offset is needed.
 		iframeTopOffset = isDesktop ? Math.max(0, Math.ceil(activeNav.getBoundingClientRect().bottom)) : 0;
 	}
 
@@ -71,6 +71,14 @@
 		// Update daily at midnight
 		const updateInterval = setInterval(calculateDaysUntilWedding, 24 * 60 * 60 * 1000);
 
+		const mobileNavObserver = new ResizeObserver(() => {
+			if (mobileNavEl) mobileNavHeight = mobileNavEl.offsetHeight;
+		});
+		if (mobileNavEl) {
+			mobileNavObserver.observe(mobileNavEl);
+			mobileNavHeight = mobileNavEl.offsetHeight;
+		}
+
 		window.addEventListener('scroll', handleScroll);
 		window.addEventListener('resize', updateIframeOffset);
 
@@ -78,6 +86,7 @@
 			window.removeEventListener('scroll', handleScroll);
 			window.removeEventListener('resize', updateIframeOffset);
 			clearInterval(updateInterval);
+			mobileNavObserver.disconnect();
 		};
 	});
 
@@ -196,7 +205,9 @@
 		</nav>
 
 		<!-- Mobile Navigation -->
-		<nav bind:this={mobileNavEl} class="sticky top-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-sm shadow-sm">
+		<div class="lg:hidden" style="height: {mobileNavHeight}px"></div>
+		<div class="fixed top-0 left-0 right-0 z-50 lg:hidden bg-black px-6">
+			<nav bind:this={mobileNavEl} class="bg-white/95 backdrop-blur-sm shadow-sm">
 			<div class="mx-auto max-w-7xl px-4 py-3">
 				<div class="flex items-center justify-between">
 					<!-- Names -->
@@ -278,6 +289,7 @@
 				</a>
 			{/if}
 		</nav>
+		</div>
 
 		<!-- Main Content -->
 		<main
