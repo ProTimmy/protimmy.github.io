@@ -211,9 +211,6 @@
 					<!-- Wedding Info -->
 					<div class="flex-1 text-center px-4">
 						<p class="text-xs text-gray-600 font-light">Aug 1, 2026 • NC</p>
-						{#if showCountdown}
-							<p class="text-xs text-gray-500">{daysUntilWedding} days to go!</p>
-						{/if}
 					</div>
 
 					<!-- Menu Button -->
@@ -278,13 +275,22 @@
 
 		<!-- Main Content -->
 		<main
-			class="transition-all duration-500 ease-out box-border {isIframeRoute ? 'pt-0 overflow-hidden' : 'lg:pt-80 pt-10'}"
+			class="transition-all duration-500 ease-out box-border {isIframeRoute ? 'pt-0 overflow-hidden' : 'lg:pt-80 pt-0 lg:pb-0 pb-14'}"
 			style={isIframeRoute
 				? `height: calc(100dvh - ${isDesktopViewport ? '3rem' : '0rem'}); padding-top: ${iframeTopOffset}px;`
 				: ''}
 		>
 			{@render children?.()}
 		</main>
+
+		<!-- Mobile RSVP Footer -->
+		{#if !isIframeRoute}
+			<div class="fixed bottom-0 left-6 right-6 z-50 lg:hidden">
+				<a href="/rsvp" class="block w-full text-white text-center py-4 text-sm font-light tracking-widest uppercase transition-colors duration-200" style="background-color: #4B9CD3;">
+					RSVP Here
+				</a>
+			</div>
+		{/if}
 
 		<!-- Footer -->
 		{#if !isIframeRoute}
