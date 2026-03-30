@@ -73,7 +73,7 @@
 
 		window.addEventListener('scroll', handleScroll);
 		window.addEventListener('resize', updateIframeOffset);
-		
+
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 			window.removeEventListener('resize', updateIframeOffset);
@@ -111,7 +111,7 @@
 	/>
 </svelte:head>
 
-<div class="p-6 bg-black">
+<div class="px-6 pb-6 lg:pt-6 bg-black">
 	<div class="bg-white">
 		<!-- Desktop Navigation -->
 		<nav
