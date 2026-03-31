@@ -237,7 +237,7 @@
 					{/if}
 				</div>
 				<div class="p-8">
-					<h3 class="text-2xl font-light text-black mb-4">{featuredHotel.name}</h3>
+					<h3 class="text-2xl font-bold text-black mb-4">{featuredHotel.name}</h3>
 					<p class="text-gray-600 mb-4 leading-relaxed">{featuredHotel.description}</p>
 					<div class="space-y-2 text-sm">
 						<div class="flex items-center text-gray-600">
@@ -276,7 +276,7 @@
 			<div class="grid lg:grid-cols-3 gap-8">
 				{#each otherHotels as hotel, i}
 					{@const hotelIndex = i + 1}
-					<div class="bg-gray-50 rounded-lg overflow-hidden">
+					<div class="bg-gray-50 rounded-lg overflow-hidden border border-black flex flex-col">
 						<!-- Slideshow -->
 						<div class="relative aspect-[4/3] bg-gray-200">
 							<div
@@ -302,10 +302,10 @@
 								</button>
 							{/if}
 						</div>
-						<div class="p-8">
-							<h3 class="text-xl font-light text-black mb-4">{hotel.name}</h3>
+						<div class="p-8 flex flex-col flex-1">
+							<h3 class="text-xl font-bold text-black mb-4">{hotel.name}</h3>
 							<p class="text-gray-600 mb-4 leading-relaxed">{hotel.description}</p>
-							<div class="space-y-2 text-sm">
+							<div class="space-y-2 text-sm mb-6">
 								<div class="flex items-center text-gray-600">
 									<svg class="w-4 h-4 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -320,12 +320,12 @@
 									<a href={phoneHref(hotel.phone)} class="text-sky-500 hover:text-sky-700 md:pointer-events-none">{hotel.phone}</a>
 								</div>
 							</div>
-							<a href={websiteUrl(hotel.website)} target="_blank" rel="noopener noreferrer" class="mt-6 block w-full px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200 font-light tracking-wide cursor-pointer text-center">
-								Book Now
-							</a>
+								<a href={websiteUrl(hotel.website)} target="_blank" rel="noopener noreferrer" class="mt-auto block w-full px-4 py-2 border border-black text-black hover:bg-black hover:text-white transition-colors duration-200 font-light tracking-wide cursor-pointer text-center">
+									Book Now
+								</a>
+							</div>
 						</div>
-					</div>
-				{/each}
+					{/each}
 			</div>
 		</div>
 	</div>
