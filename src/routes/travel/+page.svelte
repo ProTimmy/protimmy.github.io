@@ -257,6 +257,12 @@
 					<a href={websiteUrl(featuredHotel.website)} target="_blank" rel="noopener noreferrer" class="mt-6 block w-full px-4 py-2 bg-black text-white hover:bg-gray-800 transition-colors duration-200 font-light tracking-wide cursor-pointer text-center">
 						Book Now
 					</a>
+					<p class="mt-4 text-xs text-gray-500 leading-relaxed">
+						*Guests phoning should mention: <b>Armstrong Timotei Wedding - 7.31.26 - 3nts</b>
+					</p>
+					<p class="mt-4 text-xs text-gray-500 leading-relaxed">
+						Reservations by attendees must be received on or before 6/30/26. On this date, HGV will review the reservation pick up for the event and release any unreserved rooms from this room block for general sale. Additional rooms requested above the contracted amount, will be based upon rate and room availability.
+					</p>
 				</div>
 			</div>
 		</div>
