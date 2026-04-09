@@ -56,7 +56,7 @@
 					</svg>
 				</div>
 				<h3 class="text-xl font-light text-black mb-2">When</h3>
-				<p class="text-gray-600 mb-1">Friday, August 1, 2026</p>
+				<p class="text-gray-600 mb-1">Saturday, August 1, 2026</p>
 				<p class="text-gray-500 text-sm">Arrive at 4:00 PM - Ceremony at 4:30 PM</p>
 				<p class="text-gray-500 text-sm">Reception to follow</p>
 			</div>

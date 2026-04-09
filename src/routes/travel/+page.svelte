@@ -10,13 +10,13 @@
 	}
 
 	const featuredHotel: Hotel = {
-		name: "Hampton Inn & Suites Cashiers",
-		address: "201 Highway 107 North, Cashiers, NC 28717",
-		phone: "(828) 743-5500",
-		website: "https://www.hilton.com/en/hotels/casnchx-hampton-suites-cashiers-sapphire-valley/",
-		description: "Modern hotel with complimentary breakfast and indoor pool. Reliable comfort with all the amenities.",
-		distance: "8 minutes from venue",
-		images: ["/travel/hampton-inn-1.avif", "/travel/hampton-inn-2.avif", "/travel/hampton-inn-3.jpg"]
+		name: "Fairway Forest Resort",
+		address: "239 Bald Rock Rd, Sapphire, NC 28774",
+		phone: "1-800-438-2929",
+		website: "https://www.diamondresortsandhotels.com/Availability/?mkc=GATWED&property=FFR",
+		description: "A beautiful mountain resort nestled in the Nantahala National Forest, offering spacious villa-style accommodations surrounded by stunning Blue Ridge Mountain scenery.",
+		distance: "18 minutes from venue",
+		images: ["/travel/forest-1.jpg", "/travel/forest-2.jpg", "/travel/forest-3.jpg"]
 	};
 
 	const otherHotels: Hotel[] = [
@@ -26,7 +26,7 @@
 			phone: "(828) 743-7706",
 			website: "hotelcashiers.com",
 			description: "A boutique hotel nestled in the charming mountain village of Cashiers, offering a refined yet relaxed retreat with well-appointed rooms and proximity to local shopping and dining.",
-			distance: "5 minutes from venue",
+			distance: "11 minutes from venue",
 			images: ["/travel/hotel-cashiers-1.webp", "/travel/hotel-cashiers-2.avif", "/travel/hotel-cashiers-3.jpg"]
 		},
 		{
@@ -35,16 +35,16 @@
 			phone: "(828) 761-6289",
 			website: "thewellscashiers.com",
 			description: "A charming boutique hotel in the heart of Cashiers, featuring an on-site brewery and a relaxed mountain atmosphere.",
-			distance: "5 minutes from venue",
+			distance: "11 minutes from venue",
 			images: ["/travel/the-wells-hotel-1.jpg", "/travel/the-wells-hotel-2.jpg", "/travel/the-wells-hotel-3.jpg"]
 		},
 		{
 			name: "High Hampton Resort",
 			address: "1525 Highway 107 South, Cashiers, NC 28717",
-			phone: "(828) 743-2411",
+			phone: "800-648-4252",
 			website: "highhamptonresort.com",
 			description: "Historic mountain resort with golf course, spa services, and beautiful lake views. Great for families.",
-			distance: "10 minutes from venue",
+			distance: "16 minutes from venue",
 			images: ["/travel/high-hampton-resort-1.webp", "/travel/high-hampton-resort-2.webp", "/travel/high-hampton-resort-3.jpg"]
 		}
 	];
@@ -258,7 +258,7 @@
 						Book Now
 					</a>
 					<p class="mt-4 text-xs text-gray-500 leading-relaxed">
-						*Guests phoning should mention: <b>Armstrong Timotei Wedding - 7.31.26 - 3nts</b>
+						• Guests phoning should mention: <b>Armstrong Timotei Wedding - 7.31.26 - 3nts</b><br/>• Online booking code: <b>GATWED</b>
 					</p>
 					<p class="mt-4 text-xs text-gray-500 leading-relaxed">
 						Reservations by attendees must be received on or before 6/30/26. On this date, HGV will review the reservation pick up for the event and release any unreserved rooms from this room block for general sale. Additional rooms requested above the contracted amount, will be based upon rate and room availability.
