@@ -36,9 +36,9 @@
 		{ name: 'Our Story', href: '/our-story' },
 		{ name: 'Q + A', href: '/qa' },
 		{ name: 'Travel', href: '/travel' },
-		{ name: 'Things to Do', href: '/things-to-do' },
+		{ name: 'Timeline', href: '/timeline' },
 		{ name: 'Registry', href: 'https://withjoy.com/gabriel-and-elyse/registry' },
-		{ name: 'Wedding Photos', href: '/photos' },
+		{ name: 'Map', href: '/map' },
 	];
 
 	onMount(() => {
