@@ -227,17 +227,22 @@
 							</div>
 						{:else if 'choose' in item}
 							<!-- Either / or pair -->
-							<div>
-								<div class="relative grid gap-4 sm:grid-cols-2 items-stretch">
-									{#each item.choose as option}
-										{@render eventCard(option, true)}
-									{/each}
-									<!-- "or" badge centered between the two options -->
-									<div class="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-										<span class="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white text-xs font-medium uppercase tracking-wide text-gray-500 shadow-sm">
-											or
-										</span>
-									</div>
+							<div class="flex flex-col items-stretch gap-4 sm:flex-row">
+								<div class="flex-1">
+									{@render eventCard(item.choose[0], true)}
+								</div>
+
+								<!-- Divider: horizontal on mobile, vertical on desktop -->
+								<div class="flex items-center justify-center gap-3 sm:flex-col">
+									<span class="h-px w-10 bg-gray-200 sm:h-10 sm:w-px"></span>
+									<span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-xs font-medium uppercase tracking-wide text-gray-500 shadow-sm">
+										or
+									</span>
+									<span class="h-px w-10 bg-gray-200 sm:h-10 sm:w-px"></span>
+								</div>
+
+								<div class="flex-1">
+									{@render eventCard(item.choose[1], true)}
 								</div>
 							</div>
 						{:else}
