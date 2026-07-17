@@ -34,7 +34,7 @@
 					choose: [
 						{
 							time: "2 - 4 PM",
-							name: "Bridal Party",
+							name: "Bridal Shower",
 							location: "Hilltop House, on-site",
 							description: "Time with the bride. All those staying on-site are welcome to join. Please direct any questions to Analise, the Maid of Honor."
 						},
